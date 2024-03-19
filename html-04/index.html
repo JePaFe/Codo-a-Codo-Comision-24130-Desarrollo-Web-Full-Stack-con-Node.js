@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Formularios</title>
+  </head>
+  <body>
+    <h1>Formularios</h1>
+
+    <fieldset>
+      <form action="" method="get">
+        <fieldset>
+          <legend>Datos básicos</legend>
+          <div>
+            <label for="nombre">Nombre: </label>
+            <input
+              type="text"
+              name="nombre"
+              id="nombre"
+              minlength="2"
+              maxlength="5"
+            />
+          </div>
+
+          <div>
+            <label for="dni">DNI</label>
+            <input type="number" name="dni" id="dni" value="123" readonly />
+          </div>
+
+          <div>
+            <label for="url">URL: </label>
+            <input
+              type="url"
+              name="url"
+              id="url"
+              required
+              placeholder="https://..."
+            />
+          </div>
+
+          <div>
+            <label for="password">Contraseña: </label>
+            <input type="password" name="password" id="password" />
+          </div>
+        </fieldset>
+
+        <div>
+          <label for="html">HTML</label>
+          <input type="checkbox" name="html" id="html" />
+          <label for="css">CSS</label>
+          <input type="checkbox" name="css" id="css" value="5" />
+        </div>
+
+        <div>
+          <label for="si">Si</label>
+          <input type="radio" name="acepta" id="si" value="1" />
+
+          <label
+            >No
+            <input type="radio" name="acepta" value="0" />
+          </label>
+        </div>
+
+        <fieldset>
+          <legend>Otro elementos</legend>
+          <div>
+            <label for="mensaje">Mensaje: </label>
+            <textarea
+              name="mensaje"
+              id="mensaje"
+              cols="30"
+              rows="10"
+              placeholder="Máximo 100 caracteres"
+            ></textarea>
+          </div>
+
+          <div>
+            <label for="horario">Horario: </label>
+            <select name="horario" id="horario">
+              <option value="">Seleccione horario</option>
+              <option value="1">Mañana</option>
+              <option value="2">Tarde</option>
+              <option value="5">Noche</option>
+            </select>
+          </div>
+        </fieldset>
+
+        <!-- <input type="submit" value="Enviar" /> -->
+        <button type="submit">Enviar</button>
+      </form>
+    </fieldset>
+
+    <button type="button">Cambiar estilo</button>
+  </body>
+</html>
