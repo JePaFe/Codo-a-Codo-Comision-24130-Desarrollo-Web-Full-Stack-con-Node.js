@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Especificidad</title>
+    <style>
+      .color-verde {
+        color: green !important;
+        background-color: brown;
+      }
+      #color-azul {
+        color: blue;
+      }
+      p {
+        color: red;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Especificidad</h1>
+    <p>Lorem ipsum dolor sit.</p>
+    <p style="color: chartreuse" class="color-verde">
+      Eaque, quas! Maxime, saepe.
+    </p>
+    <p id="color-azul" class="color-verde">
+      Incidunt dolorem consequatur odio?
+    </p>
+    <p class="color-verde">Voluptatem, quo recusandae! Alias.</p>
+    <p>Culpa recusandae pariatur nam!</p>
+    <p>Odit ducimus alias iusto.</p>
+  </body>
+</html>
