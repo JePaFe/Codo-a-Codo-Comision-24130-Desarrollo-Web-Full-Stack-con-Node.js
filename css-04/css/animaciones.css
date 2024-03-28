@@ -1,0 +1,25 @@
+.box {
+  width: 100px;
+  height: 100px;
+  background-color: blue;
+  overflow: hidden;
+  color: snow;
+}
+
+.box:hover {
+  /* transform: rotate(-45deg); */
+  /* transform: scale(0.3); */
+  /* transform: translate(50px, 50px); */
+
+  width: 150px;
+  height: 200px;
+  transition: height 3s, width 1s;
+  transition-delay: 500ms;
+}
+
+.circle {
+  width: 100px;
+  height: 100px;
+  background-color: green;
+  border-radius: 50%;
+}

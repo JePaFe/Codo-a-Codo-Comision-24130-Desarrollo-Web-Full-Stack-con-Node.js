@@ -1,0 +1,100 @@
+ul,
+ol {
+  list-style: none;
+  padding-left: 0;
+}
+
+a {
+  text-decoration: none;
+}
+
+h1,
+h2,
+h3 {
+  color: chocolate;
+}
+
+/* main p {
+    color: red;
+} */
+
+/* main > p {
+  color: red;
+} */
+
+/* h2 + p {
+  color: green;
+} */
+
+/* h3 ~ p {
+  color: green;
+} */
+
+/* .article__title ~ p.article__parrafo {
+  color: green;
+} */
+
+/* Pseudo clases */
+
+/* article p:first-child {
+  color: chartreuse;
+} */
+
+/* article p:first-of-type {
+  color: chartreuse;
+} */
+
+/* div p:nth-child(even) {
+  color: chartreuse;
+} */
+
+a:link {
+  color: coral;
+}
+
+a:visited {
+  color: gray;
+}
+
+a:active {
+  color: greenyellow;
+}
+
+/* a {
+  color: darkcyan;
+} */
+
+a:hover {
+  border: 1px solid red;
+}
+
+h1:hover {
+  text-decoration: underline;
+}
+
+div p:last-child::first-letter {
+  font-size: 3em;
+  color: red;
+}
+
+/* .ultimo-parrafo::first-letter {
+  font-size: 3em;
+  color: red;
+} */
+
+.ultimo-parrafo::first-line {
+  color: green;
+}
+
+.ultimo-parrafo::selection {
+  background-color: brown;
+  color: yellow;
+}
+
+h2::before {
+  content: "- ";
+}
+
+p::after {
+  content: "...";
+}
