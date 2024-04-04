@@ -1,0 +1,82 @@
+* {
+  box-sizing: border-box;
+}
+body {
+  background-color: gray;
+}
+.menu {
+  padding: 0.5em;
+  background-color: lightyellow;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.menu__items {
+  display: flex;
+}
+ul,
+ol {
+  padding-left: 0;
+  list-style: none;
+}
+a {
+  text-decoration: none;
+}
+.container {
+  min-height: 50vh;
+  color: white;
+  background-color: lightyellow;
+  border: 1px solid black;
+  padding: 0.5em;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  /* flex-flow: row wrap; */
+  /* justify-content: space-between; */
+  /* align-items: stretch; */
+  /* align-content: space-evenly; */
+  gap: 1em;
+  /* gap: 3em 2em; */
+  /* row-gap: 2em; */
+}
+.item {
+  border: 1px solid black;
+  padding: 0.5em;
+  /* margin: 0.5em; */
+  /* flex-basis: 0;
+  flex-grow: 1; */
+  /* flex: 1; */
+}
+.item-1 {
+  background-color: blue;
+  /* font-size: 5em; */
+  /* flex-grow: 3; */
+}
+.item-2 {
+  background-color: green;
+  width: 100px;
+  /* flex-grow: 1; */
+}
+.item-3 {
+  background-color: red;
+  height: 100px;
+  /* order: -99; */
+}
+.item-4 {
+  background-color: violet;
+  width: 200px;
+  /* flex-shrink: 1; */
+  /* order: 1; */
+}
+.item-5 {
+  background-color: brown;
+  width: 150px;
+  height: 150px;
+  /* flex-basis: 100px; */
+  overflow: auto;
+}
+.item-6 {
+  background-color: goldenrod;
+  width: 250px;
+  /* align-self: self-start; */
+}

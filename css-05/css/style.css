@@ -1,0 +1,24 @@
+* {
+  margin: 0;
+}
+
+.main {
+  max-width: 1200px;
+  min-height: 100vh;
+  margin: auto;
+  background-color: aqua;
+}
+
+@media screen and (min-width: 768px) {
+  .main {
+    background-color: blue;
+    color: snow;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .main {
+    background-color: orangered;
+    color: snow;
+  }
+}
