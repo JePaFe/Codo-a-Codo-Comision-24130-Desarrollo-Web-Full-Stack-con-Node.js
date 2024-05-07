@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>JS 06</title>
+    <style>
+      section.form {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 1fr 1fr 1fr;
+        grid-template-areas:
+          "nombre nombre"
+          "apellido apellido"
+          "telefono celular";
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <nav>
+        <a href="#">Logo</a>
+        <ul>
+          <li><a href="#">Contacto</a></li>
+        </ul>
+      </nav>
+    </header>
+    <main>
+      <h1 onclick="alert('No usar')" style="color: red">JS 06</h1>
+      <section>
+        <h2 class="destacado">Sección 1</h2>
+        <p>Lorem ipsum dolor sit.</p>
+        <p class="destacado" id="segundo-parrafo">
+          Unde sed deserunt reprehenderit.
+        </p>
+        <article>
+          <h3>Articulo 1</h3>
+          <p class="destacado">Veritatis provident autem facilis.</p>
+          <p>Nulla cumque neque aspernatur!</p>
+          <p>Architecto possimus delectus nulla.</p>
+        </article>
+      </section>
+      <section>
+        <h2 id="contacto-title">Contacto</h2>
+        <form>
+          <label for="nombre">Nombre</label>
+          <input type="text" name="nombre" id="nombre" required />
+
+          <label for="provincia">Provincia</label>
+          <select name="" id=""></select>
+
+          <label>
+            <input type="radio" name="" id="" />
+            opcion 1
+          </label>
+
+          <label>
+            <input type="radio" name="" id="" />
+            opcion 1
+          </label>
+
+          <button type="submit">Enviar</button>
+        </form>
+      </section>
+      <section class="form">
+        <div style="grid-area: nombre">
+          <label style="display: none" for="nombre">Nombre</label>
+          <input type="text" name="nombre" id="nombre" />
+        </div>
+        <div style="grid-area: apellido">
+          <label for="apellido">Apellido</label>
+          <input type="text" name="apellido" id="apellido" />
+        </div>
+        <div style="grid-area: telefono">3</div>
+        <div style="grid-area: celular">4</div>
+      </section>
+    </main>
+    <footer>
+      <small>Copyright 2024</small>
+    </footer>
+
+    <!-- <script src="./js/script.js"></script> -->
+    <!-- <script src="./js/querySelector.js"></script> -->
+    <!-- <script src="./js/createElement.js"></script> -->
+    <script src="./js/eventos.js"></script>
+  </body>
+</html>
