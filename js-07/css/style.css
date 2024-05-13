@@ -1,0 +1,95 @@
+@import url("https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+ul,
+ol {
+  list-style: none;
+}
+
+body {
+  min-height: 100vh;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr 2em;
+  row-gap: 0.5em;
+}
+
+.main {
+  margin: 0.5em;
+}
+
+.main__title {
+  text-align: center;
+  margin-bottom: 0.5em;
+}
+
+.section {
+  margin-bottom: 1em;
+}
+
+@media (min-width: 768px) {
+  .section {
+    max-width: 400px;
+    margin: auto;
+    margin-bottom: 1.5em;
+  }
+}
+
+.section__title {
+  margin-bottom: 0.5em;
+}
+
+.form {
+  display: flex;
+  justify-content: space-between;
+  gap: 0.25em;
+}
+
+.form__label {
+  align-self: center;
+  font-weight: bold;
+}
+
+.form__input {
+  flex: 1;
+}
+
+.form__button {
+  display: inline-block;
+  padding: 0.25em 1em;
+}
+
+.error {
+  text-align: center;
+  color: red;
+}
+
+.tasks__item {
+  display: flex;
+  justify-content: space-between;
+}
+
+.done {
+  text-decoration: line-through;
+}
+
+.bx-check {
+  color: green;
+  cursor: pointer;
+}
+
+.bx-trash {
+  color: red;
+  cursor: pointer;
+}
+
+.footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
