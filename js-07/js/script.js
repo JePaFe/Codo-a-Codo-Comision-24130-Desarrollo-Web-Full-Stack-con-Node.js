@@ -25,7 +25,7 @@ const renderTasks = () => {
   });
 };
 
-form.addEventListener("submit", (event) => {
+form.addEventListener("submit", async (event) => {
   event.preventDefault();
 
   let erroresValidacion = false;
@@ -49,17 +49,43 @@ form.addEventListener("submit", (event) => {
   if (!erroresValidacion) {
     // Creo la tarea
     const task = {
-      id: Date.now(),
+      // id: Date.now(),
       title: title,
       complete: false,
     };
+
+    // fetch("http://localhost:3000/tasks", {
+    //   method: "POST",
+    //   body: JSON.stringify(task),
+    //   headers: {
+    //     "Content-type": "application/json; charset=UTF-8",
+    //   },
+    // })
+    //   .then((response) => response.json())
+    //   .then((json) => console.log(json));
+
+    try {
+      const response = await fetch("http://localhost:3000/tasks", {
+        method: "POST",
+        body: JSON.stringify(task),
+        headers: {
+          "Content-type": "application/json; charset=UTF-8",
+        },
+      });
+
+      const json = await response.json();
+      task.id = json.id;
+    } catch (error) {
+      console.log(error);
+    }
+
     // console.log(task);
     // Agrego la tarea al Array
     tasks.push(task);
     // console.log(tasks);
 
     // Guardarlo en formato JSON en el local Storage
-    localStorage.setItem("tasks", JSON.stringify(tasks));
+    // localStorage.setItem("tasks", JSON.stringify(tasks));
 
     taskInput.value = "";
 
@@ -77,7 +103,11 @@ taskList.addEventListener("click", (event) => {
 
     tasks.splice(taskindex, 1);
 
-    localStorage.setItem("tasks", JSON.stringify(tasks));
+    // localStorage.setItem("tasks", JSON.stringify(tasks));
+
+    fetch(`http://localhost:3000/tasks/${id}`, {
+      method: "DELETE",
+    });
 
     event.target.closest("li").remove();
   }
@@ -93,19 +123,42 @@ taskList.addEventListener("click", (event) => {
   //         `;
 
   if (event.target.classList.contains("bx-check")) {
+    console.log(event.target.closest("li").dataset);
     const id = event.target.closest("li").dataset.id;
+
+    // const index = Array.prototype.slice
+    //   .call(event.target.parentNode.parentNode.children)
+    //   .indexOf(event.target.parentNode);
+
     const task = tasks.find((task) => task.id == id);
     task.complete = !task.complete;
 
-    localStorage.setItem("tasks", JSON.stringify(tasks));
+    // localStorage.setItem("tasks", JSON.stringify(tasks));
+
+    fetch(`http://localhost:3000/tasks/${id}`, {
+      method: "PUT",
+      body: JSON.stringify(task),
+      headers: {
+        "Content-type": "application/json; charset=UTF-8",
+      },
+    })
+      .then((response) => response.json())
+      .then((json) => console.log(json));
 
     event.target.closest("li").querySelector("p").classList.toggle("done");
   }
 });
 
-document.addEventListener("DOMContentLoaded", () => {
-  tasks = JSON.parse(localStorage.getItem("tasks")) || [];
+document.addEventListener("DOMContentLoaded", async () => {
+  // tasks = JSON.parse(localStorage.getItem("tasks")) || [];
   //   console.log(tasks);
+
+  try {
+    const response = await fetch("http://localhost:3000/tasks");
+    tasks = await response.json();
+  } catch (error) {
+    console.log(error);
+  }
 
   renderTasks();
 });
